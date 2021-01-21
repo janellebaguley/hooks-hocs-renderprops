@@ -1,5 +1,7 @@
 import React from 'react';
 import Hooks from './Components/Hooks';
+import ThemeChanger from './Components/ThemeChanger';
+import RenderProp from './Components/RenderProp';
 import './App.css';
 
 function App() {
@@ -7,7 +9,12 @@ function App() {
     <div className="App">
       <Hooks />
       {/* <ThemeChanger /> */}
-      {/* render prop component here */}
+      <RenderProp render ={(theme, toggleFn) => (
+        <div className = {theme}>
+          <button className = 'toggle-btn' onClick = {toggleFn}>{theme}</button>
+
+        </div>
+      )}/>
     </div>
   );
 }
